@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         Alamofire.request(.POST, postUrl, parameters: parameters).responseJSON {
             response in
-            
+            print("回傳值為\(response)")
             if let data = response.result.value {
                 let content = JSON(data)
                 let spendingTime = dateFormatter.dateFromString(String(content["form"]["time"]))
